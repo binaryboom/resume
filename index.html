@@ -77,8 +77,17 @@
       .btn{
         background-color: black !important;
         color: white !important;
-        
       }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      /* .name{
+        text-align: center;
+        margin-left: 50%;
+        flex-grow: 1;
+      } */
       /* .main hr{
         margin: 0;
       } */
@@ -96,10 +105,16 @@
     </style>
   </head>
 
-  <body>
-    <center>
-      <p id="name">Raghav Kataria</p>
-    </center>
+  <body id="resume-content">
+  <div class="header">
+    
+      <p id="name">Raghav Kataria</p> 
+    
+      <button class="btn pdf" onclick="pdf2()"><i class="fa-solid fa-file-pdf"></i></button>
+  </div>
+    <!-- <center>
+      <p id="name">Raghav Kataria   <button class="btn pdf" onclick="generatePDF()"><i class="fa-solid fa-file-pdf"></i></button></p> 
+    </center>  -->
     <hr />
     <div class="info">
       <div class="call">
@@ -420,5 +435,38 @@
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"
     ></script>
+    <!-- Include jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  function pdf2(){
+    window.open("https://drive.google.com/file/d/1f2vh5pgw_B40YtQ9k8wlAPOhZmf0_X4e/view?usp=sharing", "_blank");
+
+  }
+  function generatePDF() {
+    let pdfBtn=document.querySelector(".pdf");
+    pdfBtn.style.display="none";
+    // document.querySelector("body").style.width="1150px";
+    var element = document.getElementById('resume-content');
+    // html2pdf(element);
+    
+    var opt = {
+      margin:       0,
+      filename:     'RaghavKataria_Resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    // New Promise-based usage:
+    html2pdf().set(opt).from(element).save();
+
+    // Old monolithic-style usage:
+    // html2pdf(element, opt);
+    setTimeout(()=>{
+      pdfBtn.style.display="";
+    },5000);
+  }
+
+</script>
   </body>
 </html>
