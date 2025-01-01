@@ -19,6 +19,10 @@
             font-weight: 500;
             line-height: 1.5;
         }
+        hr{
+            margin-top: 0.2rem !important;
+            margin-bottom: 0.2rem !important;
+        }
 
         #name {
             font-size: 36px;
@@ -31,9 +35,11 @@
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 10px;
+            padding: 0.3rem;
         }
-
+        
         .info div {
+            margin: 0 !important;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -55,18 +61,33 @@
         .pcontent {
             font-weight: 400;
             font-size: 15px;
-
         }
 
+        .exp .pcontent{
+            margin-bottom: 0.6rem;
+        }
+
+        .tech .pcontent{
+            margin-bottom: 0;
+        }
+        .tech .card-body{
+            padding-top: 0.2rem;
+        }
         .proj .pcontent {
             font-weight: 500;
             margin-left: 1rem;
+            margin-bottom: 0.2rem;
         }
 
         .proj .left {
             display: flex;
             justify-content: center;
             align-items: flex-end;
+        }
+
+        .proj .card-title{
+            margin-bottom: 0.2rem;
+            margin-top: 0.5rem;
         }
 
         .exp .pcontent {
@@ -119,6 +140,10 @@
             justify-content: space-between;
             align-items: center;
         }
+        .card-header{
+            padding: 0.5rem;
+            padding-left: 1.25rem;
+        }
 
 
         .pdf {
@@ -157,6 +182,7 @@
                 text-align: start;
                 justify-content: space-between;
             }
+            
 
             .edu .corners,
             .tech .corners,
@@ -232,7 +258,7 @@
                     </div>
 
                     <!--  school-->
-                    <div class="corners">
+                    <!-- <div class="corners">
                         <div class="left">
                             <h6 class="card-title">DAV Police Public School, Panipat</h6>
                         </div>
@@ -255,17 +281,17 @@
                         <div class="right">
                             <p class="pcontent">91%</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     
-                    <!-- <div class="corners">
+                    <div class="corners">
                         <div class="left">
                             <h6 class="card-title">DAV Police Public School, Panipat (2020-2022)</h6>
                         </div>
                         <div class="right">
                             <h6 style="font-weight: 400;" >Class XII : 83% <br>Class X &nbsp;&nbsp;: 91%</h6>
                         </div>
-                    </div> -->
+                    </div>
                     
 
                     <!-- <a target="_blank" href="#" class="btn btn-dark">Go somewhere</a> -->
