@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click to Copy</title>
+  <style>
+    .copy-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .copy-btn {
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .copy-btn:active {
+      background-color: #45a049;
+    }
+    .copied {
+      color: green;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Resume Drive Link :</h3>
+  <div class="copy-container">
+    <a id="drive-link" href="https://drive.google.com/file/d/1-iiYHH9t4fqLjq6WHKMA8Sqg4cWu34GO/view?usp=sharing" target="_blank">
+        https://drive.google.com/file/d/1-iiYHH9t4fqLjq6WHKMA8Sqg4cWu34GO/view?usp=sharing
+    </a>
+    <button class="copy-btn" onclick="copyLink()">Copy</button>
+    <span id="copied-text" class="copied" style="display: none;">Copied!</span>
+  </div>
+
+  <script>
+    function copyLink() {
+      const link = document.getElementById('drive-link').href;
+      navigator.clipboard.writeText(link).then(() => {
+        document.getElementById('copied-text').style.display = 'inline';
+        setTimeout(() => {
+          document.getElementById('copied-text').style.display = 'none';
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
